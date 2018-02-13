@@ -1,7 +1,7 @@
 'usage strict';
 
-//GLobal Time Array to 
-var times = ['6am','7am','8am','9am','10am','11am','12am','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
+//GLobal Time Array
+var times = ['6am','7am','8am','9am','10am','11am','12am','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
 
 var firstAndPike = {
 	// min and max customers per hour
@@ -19,7 +19,7 @@ var firstAndPike = {
 	custPerHour: [],
 	
 	// cookiesSoldEachHour = []methodToCalc
-  multiplyCookies: function() {
+  calcCookiesPerHour: function() {
     this.calcCustPerHour();
     for (var j = 0; j < this.custPerHour.length; j++) {
       this.cookiesPerHour.push(this.custPerHour[j] * this.avgCookPerCust);
@@ -30,7 +30,7 @@ var firstAndPike = {
 	
 	// TotalCookiesForTheDay = methodToCalc
 	totalCookies: function() {
-	  this.multiplyCookies();
+	  this.calcCookiesPerHour();
 		for (var x = 0; x < this.cookiesPerHour.length; x++) {
 		  this.dayTotalCookies += this.cookiesPerHour[x];
 		}
