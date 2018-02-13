@@ -18,7 +18,12 @@ ul {
     margin-left: 25px;  
     margin-bottom: 20px;
 }
+
+.total {
+    font-weight: bold;
+}
+
 /* 
-li {
-    
+li:nth-last-child(1) {
+    font-weight: bold; 
 } */
