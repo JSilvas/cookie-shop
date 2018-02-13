@@ -1,6 +1,6 @@
 'usage strict';
 
-//Time Array to 
+//GLobal Time Array to 
 var times = ['6am','7am','8am','9am','10am','11am','12am','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm'];
 
 var firstAndPike = {
@@ -39,6 +39,7 @@ var firstAndPike = {
   
 	// renderMethod
 	render: function() {
+		this.totalCookies();
 		var ulEl = document.getElementById('firstAndPike');		
 		for (var i = 0; i < this.cookiesPerHour.length; i++) {
 			// create an element
@@ -58,11 +59,12 @@ var firstAndPike = {
 	}
 };
 
+
 var seaTac = {
 	// min and max customers per hour
-	minCustPerHour: 23,
-	maxCustPerHour: 65,	
-	avgCookPerCust: 6.3,
+	minCustPerHour: 3,
+	maxCustPerHour: 24,	
+	avgCookPerCust: 1.2,
 	
 	// methodToGenerateRandomCustomers		
 	calcCustPerHour: function() {
@@ -94,7 +96,8 @@ var seaTac = {
 	
 	// renderMethod
 	render: function() {
-		var ulEl = document.getElementById('firstAndPike');
+		this.totalCookies();
+		var ulEl = document.getElementById('seaTac');
 		for (var i = 0; i < this.cookiesPerHour.length; i++) {
 			// create an element
 			var liEl = document.createElement('li');
@@ -116,9 +119,9 @@ var seaTac = {
 
 var seaCenter = {
 	// min and max customers per hour
-	minCustPerHour: 23,
-	maxCustPerHour: 65,	
-	avgCookPerCust: 6.3,
+	minCustPerHour: 11,
+	maxCustPerHour: 38,	
+	avgCookPerCust: 3.7,
 	
 	// methodToGenerateRandomCustomers		
 	calcCustPerHour: function() {
@@ -150,7 +153,8 @@ var seaCenter = {
 	
 	// renderMethod
 	render: function() {
-		var ulEl = document.getElementById('firstAndPike');
+		this.totalCookies();
+		var ulEl = document.getElementById('seaCenter');
 		for (var i = 0; i < this.cookiesPerHour.length; i++) {
 			// create an element
 			var liEl = document.createElement('li');
@@ -172,9 +176,9 @@ var seaCenter = {
 
 var capHill = {
 	// min and max customers per hour
-	minCustPerHour: 23,
-	maxCustPerHour: 65,	
-	avgCookPerCust: 6.3,
+	minCustPerHour: 20,
+	maxCustPerHour: 38,	
+	avgCookPerCust: 2.3,
 	
 	// methodToGenerateRandomCustomers		
 	calcCustPerHour: function() {
@@ -206,7 +210,8 @@ var capHill = {
 	
 	// renderMethod
 	render: function() {
-		var ulEl = document.getElementById('firstAndPike');
+		this.totalCookies();
+		var ulEl = document.getElementById('capHill');
 		for (var i = 0; i < this.cookiesPerHour.length; i++) {
 			// create an element
 			var liEl = document.createElement('li');
@@ -228,9 +233,9 @@ var capHill = {
 
 var alki = {
 	// min and max customers per hour
-	minCustPerHour: 23,
-	maxCustPerHour: 65,	
-	avgCookPerCust: 6.3,
+	minCustPerHour: 2,
+	maxCustPerHour: 16,	
+	avgCookPerCust: 4.6,
 	
 	// methodToGenerateRandomCustomers		
 	calcCustPerHour: function() {
@@ -262,7 +267,8 @@ var alki = {
 	
 	// renderMethod
 	render: function() {
-		var ulEl = document.getElementById('firstAndPike');
+		this.totalCookies();
+		var ulEl = document.getElementById('alki');
 		for (var i = 0; i < this.cookiesPerHour.length; i++) {
 			// create an element
 			var liEl = document.createElement('li');
@@ -282,8 +288,12 @@ var alki = {
 };
 
 
-firstAndPike.totalCookies();
 firstAndPike.render();
+seaTac.render();
+seaCenter.render();
+capHill.render();
+alki.render();
+
 
 //console.log(firstAndPike.custPerHour);
 //console.log(firstAndPike.cookiesPerHour);
