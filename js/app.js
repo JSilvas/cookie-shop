@@ -11,35 +11,30 @@ var firstAndPike = {
   
   // methodToGenerateRandomCustomers		
 	calcCustPerHour: function() {
+		//Create random number generator function, call here to save code in all objects
 		for (var i = 0; i < times.length; i++) {
 			this.custPerHour.push(Math.floor(Math.random() * (this.maxCustPerHour - this.minCustPerHour)) + this.minCustPerHour);
 		}
 	},
-	// Array customersEachHour
+	// Array customers each Hour
 	custPerHour: [],
 	
-	// cookiesSoldEachHour = []methodToCalc
-  calcCookiesPerHour: function() {
-    this.calcCustPerHour();
-    for (var j = 0; j < this.custPerHour.length; j++) {
-      this.cookiesPerHour.push(this.custPerHour[j] * this.avgCookPerCust);
+	// Calculate cookies sold each hour and Total for Day
+  calcCookies: function() {
+		for (var i = 0; i < this.custPerHour.length; i++) {
+			var hourlyCookies = (this.custPerHour[i] * this.avgCookPerCust);
+			this.cookiesPerHour.push(hourlyCookies);
+			this.dayTotalCookies += hourlyCookies;
     }
   },
-  // Array cookies sold per hour
+  // Array cookies sold per hour and Total for day
   cookiesPerHour: [],
-	
-	// TotalCookiesForTheDay = methodToCalc
-	totalCookies: function() {
-	  this.calcCookiesPerHour();
-		for (var x = 0; x < this.cookiesPerHour.length; x++) {
-		  this.dayTotalCookies += this.cookiesPerHour[x];
-		}
-	},
   dayTotalCookies: 0,
   
 	// renderMethod
 	render: function() {
-		this.totalCookies();
+		this.calcCustPerHour();
+		this.calcCookies();
 		var ulEl = document.getElementById('firstAndPike');		
 		for (var i = 0; i < this.cookiesPerHour.length; i++) {
 			// create an element
@@ -53,6 +48,7 @@ var firstAndPike = {
 		// create an element
 		var liEl = document.createElement('li');
 		// render dayTotalCookies
+		liEl.className = ('total');
 		liEl.textContent = 'Total: ' + Math.round(this.dayTotalCookies) + ' cookies';
 		// Append to DOM
 		ulEl.appendChild(liEl);
@@ -76,10 +72,10 @@ var seaTac = {
 	custPerHour: [],
 	
 	// cookiesSoldEachHour = []methodToCalc
-	multiplyCookies: function() {
+	calCookiesPerHour: function() {
 		this.calcCustPerHour();
-		for (var j = 0; j < this.custPerHour.length; j++) {
-			this.cookiesPerHour.push(this.custPerHour[j] * this.avgCookPerCust);
+		for (var i = 0; i < this.custPerHour.length; i++) {
+			this.cookiesPerHour.push(this.custPerHour[i] * this.avgCookPerCust);
 		}
 	},
 	// Array cookies sold per hour
@@ -87,7 +83,7 @@ var seaTac = {
 	
 	// TotalCookiesForTheDay = methodToCalc
 	totalCookies: function() {
-		this.multiplyCookies();
+		this.calCookiesPerHour();
 		for (var x = 0; x < this.cookiesPerHour.length; x++) {
 			this.dayTotalCookies += this.cookiesPerHour[x];
 		}
@@ -110,6 +106,7 @@ var seaTac = {
 		// create an element
 		var liEl = document.createElement('li');
 		// render dayTotalCookies
+		liEl.className = ('total');
 		liEl.textContent = 'Total: ' + Math.round(this.dayTotalCookies) + ' cookies';
 		// Append to DOM
 		ulEl.appendChild(liEl);	
@@ -135,8 +132,8 @@ var seaCenter = {
 	// cookiesSoldEachHour = []methodToCalc
 	multiplyCookies: function() {
 		this.calcCustPerHour();
-		for (var j = 0; j < this.custPerHour.length; j++) {
-			this.cookiesPerHour.push(this.custPerHour[j] * this.avgCookPerCust);
+		for (var i = 0; i < this.custPerHour.length; i++) {
+			this.cookiesPerHour.push(this.custPerHour[i] * this.avgCookPerCust);
 		}
 	},
 	// Array cookies sold per hour
@@ -167,6 +164,7 @@ var seaCenter = {
 		// create an element
 		var liEl = document.createElement('li');
 		// render dayTotalCookies
+		liEl.className = ('total');
 		liEl.textContent = 'Total: ' + Math.round(this.dayTotalCookies) + ' cookies';
 		// Append to DOM
 		ulEl.appendChild(liEl);	
@@ -192,8 +190,8 @@ var capHill = {
 	// cookiesSoldEachHour = []methodToCalc
 	multiplyCookies: function() {
 		this.calcCustPerHour();
-		for (var j = 0; j < this.custPerHour.length; j++) {
-			this.cookiesPerHour.push(this.custPerHour[j] * this.avgCookPerCust);
+		for (var i = 0; i < this.custPerHour.length; i++) {
+			this.cookiesPerHour.push(this.custPerHour[i] * this.avgCookPerCust);
 		}
 	},
 	// Array cookies sold per hour
@@ -224,6 +222,7 @@ var capHill = {
 		// create an element
 		var liEl = document.createElement('li');
 		// render dayTotalCookies
+		liEl.className = ('total');
 		liEl.textContent = 'Total: ' + Math.round(this.dayTotalCookies) + ' cookies';
 		// Append to DOM
 		ulEl.appendChild(liEl);
@@ -249,8 +248,8 @@ var alki = {
 	// cookiesSoldEachHour = []methodToCalc
 	multiplyCookies: function() {
 		this.calcCustPerHour();
-		for (var j = 0; j < this.custPerHour.length; j++) {
-			this.cookiesPerHour.push(this.custPerHour[j] * this.avgCookPerCust);
+		for (var i = 0; i < this.custPerHour.length; i++) {
+			this.cookiesPerHour.push(this.custPerHour[i] * this.avgCookPerCust);
 		}
 	},
 	// Array cookies sold per hour
@@ -281,6 +280,7 @@ var alki = {
 		// create an element
 		var liEl = document.createElement('li');
 		// render dayTotalCookies
+		liEl.className = ('total');
 		liEl.textContent = 'Total: ' + Math.round(this.dayTotalCookies) + ' cookies';
 		// Append to DOM
 		ulEl.appendChild(liEl);
