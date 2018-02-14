@@ -5,6 +5,8 @@ var times = ['6am','7am','8am','9am','10am','11am','12am','1pm','2pm','3pm','4pm
 var storeList = [];
 var cookiesTable = document.getElementById('cookies');
 
+//stretch Goal variables
+
 // object constructor for each store
 function Store(storeName, minCustPerHour, maxCustPerHour, avgCookPerCust) {
   this.storeName = storeName;
@@ -16,7 +18,8 @@ function Store(storeName, minCustPerHour, maxCustPerHour, avgCookPerCust) {
   this.dayTotalCookies = 0;
   storeList.push(this);
   this.calcCustPerHour();
-  this.calcCookies(); //
+  this.calcCookies();
+  //this.render();    Why do I not need to invoke this method inside the constructor??? Where is it invoked??
 }
 
 // Methods within the constructor
@@ -26,6 +29,7 @@ Store.prototype.calcCustPerHour = function() {
     this.custPerHour.push(Math.floor(Math.random() * (this.maxCustPerHour - this.minCustPerHour)) + this.minCustPerHour);
   }
 };
+
 Store.prototype.calcCookies = function() { // Calculates cookies sold each day
   for (var i = 0; i < this.custPerHour.length; i++) {
     var hourlyCookies = Math.ceil(this.custPerHour[i] * this.avgCookPerCust);
@@ -33,7 +37,6 @@ Store.prototype.calcCookies = function() { // Calculates cookies sold each day
     this.dayTotalCookies += hourlyCookies;
   }
 };
-
 // Table Element Render Functions
 Store.prototype.render = function() {
   this.calcCookies();
@@ -55,7 +58,7 @@ Store.prototype.render = function() {
   tdEl.textContent = this.dayTotalCookies;
   trEl.appendChild(tdEl);
 
-  // Append to Table
+  // Append row to Table
   cookiesTable.append(trEl);
 };
 
@@ -89,13 +92,32 @@ function cookieRows() {
     storeList[i].render();
   }
 }
+/*
+function footerRow() {
+  var trEl = document.createElement('tr');
+  var tfootEl = document.createElement('tfoot');
+
+  // Create Store Column Total Footer
+  tfootEl.textContent = 'Hourly Totals';
+  trEl.appendChild(tfootEl);
+
+  for(var i = 0; i < times.length; i++) {
+    var total = 0;
+    for(var j = 0; j < storeList.length; j++) {
+      total += storeList[j].cookiesPerHour[i];
+      console.log(total, 'inner loop');
+    }
+  }
+}
+*/
 
 // Instantiate constructor Store() for each set of inputs
-new Store('pikePlace', 23, 65, 6.3);
-new Store('seaTac', 3, 24, 1.2);
-new Store('seaCenter', 11, 38, 3.7);
-new Store('capHill', 20, 38, 2.3);
-new Store('alki', 3, 24, 1.2);
+new Store('First & Pike', 23, 65, 6.3);
+new Store('SeaTac Airport', 3, 24, 1.2);
+new Store('Seattle Center', 11, 38, 3.7);
+new Store('Capitol Hill', 20, 38, 2.3);
+new Store('Alki Beach', 3, 24, 1.2);
 
 cookieRows();
+// footerRow();
 console.table(storeList);
