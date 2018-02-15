@@ -1,11 +1,11 @@
 'usage strict';
-
-//GLobal Time Array
+// Global variables for DOM access and such
 var times = ['6am','7am','8am','9am','10am','11am','12am','1pm','2pm','3pm','4pm','5pm','6pm','7pm'];
 var storeList = [];
 var cookiesTable = document.getElementById('cookies');
 
-//stretch Goal variables
+
+
 
 // object constructor for each store
 function Store(storeName, minCustPerHour, maxCustPerHour, avgCookPerCust) {
@@ -86,7 +86,6 @@ function headerRow() {
 }
 
 function cookieRows() {
-  headerRow();
 
   for (var i = 0; i < storeList.length; i++) {
     storeList[i].render();
@@ -118,6 +117,8 @@ new Store('Seattle Center', 11, 38, 3.7);
 new Store('Capitol Hill', 20, 38, 2.3);
 new Store('Alki Beach', 3, 24, 1.2);
 
+headerRow();
 cookieRows();
 // footerRow();
+
 console.table(storeList);
