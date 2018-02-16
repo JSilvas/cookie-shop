@@ -8,6 +8,12 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+#salmon {
+  opacity: 0.5;
+  width:100%
+  
+}
+
 fieldset {
   max-width: 700px;
   border: 7px solid #73094c;
@@ -15,6 +21,18 @@ fieldset {
   padding: 10px;
   text-align: center;
 }
+/* 
+Basic Table Properties
+
+width - set width of table
+padding - spacing between cell border and contents
+text-transform - convert case of letters
+letter-spacing, font-size - adjust to make cells more easily readable
+border-top, border-bottom - set borders above and below headers, cells
+text-align - left or right alignment of text in cell
+background-color - change colors of background
+use tr.even to change every other row
+:hover highlight table when mouse is over it */
 
 table {
   border: 10px solid black;
@@ -52,6 +70,8 @@ ul {
 .total {
     font-weight: bold;
 }
+
+
 
 /*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 /* legend {
