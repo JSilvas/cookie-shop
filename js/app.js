@@ -182,3 +182,17 @@ function handleDataSubmit(event) {
 
 // Event listener for form "submit yer data" button
 salesForm.addEventListener('submit', handleDataSubmit);
+
+
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Make code more DRY (Don't Repeat Yourself!)
+
+// function newElement(elementType, content, parent, classIfNeeded) {
+//   var newEl =
+
+//   // create elementType
+
+//   // content IDBTransaction
+
+//   // append it
+// }
