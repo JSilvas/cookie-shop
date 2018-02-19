@@ -1,0 +1,74 @@
+body {
+  background: salmon;
+  background-attachment: fixed;
+  margin: auto;
+  font-family: 'Oleo Script Swash Caps', cursive; 
+  font-size: 1em;
+  color: rgb(63, 13, 13);
+  text-align: center;
+}
+fieldset {
+  max-width: 75%;
+  border: 7px solid #73094c;
+  border-radius: 25px;
+  padding: 10px;
+  text-align: center;
+}
+table {
+  border: 10px solid black;
+  
+}
+td {
+  padding: 10px;
+	border-radius: 15px;
+  border: 1px solid black;
+  background: white;
+}
+th {
+	background-color: navy;
+	color: white;
+}
+
+h1 {
+  font-size: 3em;
+}
+p {
+  font-size: 1em;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-left: 6px; 
+  margin: 6px;
+}
+  
+  ul {
+    margin-left: 25px;  
+    margin-bottom: 20px;
+}
+  
+.total {
+    font-weight: bold;
+}
+
+button {
+  color: #73094c;
+  text-shadow: 0px 1px 1px #ffffff;
+  border: 2px solid #b2b2b2;
+  background-color: #73094c;
+  background: -webkit-gradient(linear, left top, left bottom, from(#F0E8C7), to(#9C9060));
+  background: -moz-linear-gradient(top, #F0E8C7, #9C9060);
+  background: -o-linear-gradient(top, #F0E8C7, #9C9060);
+  background: -ms-linear-gradient(top, #F0E8C7, #9C9060);
+}
+      
+button:hover {
+  color: #73094c;
+  border: 2px solid #a4a4a4;
+  background-color: #73094c;
+  background: -webkit-gradient(linear, left top, left bottom, from(#F0E8C7), to(#9C9000));
+  background: -moz-linear-gradient(top, #F0E8C7, #9C9000);
+  background: -o-linear-gradient(top, #F0E8C7, #9C9000);
+  background: -ms-linear-gradient(top, #F0E8C7, #9C9000);
+}
