@@ -1,6 +1,8 @@
 body {
   background: salmon;
+  background-image: url('http://images.all-free-download.com/images/graphicthumb/linen_fabric_background_01_hd_picture_169828.jpg');
   background-attachment: fixed;
+  max-width: 960px;
   margin: auto;
   font-family: 'Oleo Script Swash Caps', cursive; 
   font-size: 1em;
@@ -12,11 +14,11 @@ fieldset {
   border: 7px solid #73094c;
   border-radius: 25px;
   padding: 10px;
+  margin: auto;
   text-align: center;
 }
 table {
   border: 10px solid black;
-  
 }
 td {
   padding: 10px;

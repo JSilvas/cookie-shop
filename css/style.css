@@ -33,3 +33,11 @@ main {
   max-width: 960px;
   margin: auto;
 }
+
+footer address{
+  font-size: 1.2em;
+  font-weight: bold;
+  max-width: 960px;
+  margin: auto;
+  padding: 25px;
+}
